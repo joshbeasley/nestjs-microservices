@@ -5,5 +5,8 @@ import { CreateUserDto } from './dtos/create-user.dto';
 @Controller()
 export class UsersMicroserviceController {
   @MessagePattern({ cmd: 'createUser' })
-  createUser(@Payload() data: CreateUserDto) {}
+  createUser(@Payload() data: CreateUserDto) {
+    console.log(data);
+    return data;
+  }
 }
